@@ -1,38 +1,96 @@
-.App {
+/* General Layout */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  animation: backgroundAnimation 10s infinite alternate;
+}
+
+/* Background Animation */
+@keyframes backgroundAnimation {
+  0% {
+    background: linear-gradient(to right, #ffafbd, #ffc3a0);
+  }
+  50% {
+    background: linear-gradient(to right, #2193b0, #6dd5ed);
+  }
+  100% {
+    background: linear-gradient(to right, #cc2b5e, #753a88);
+  }
+}
+
+/* Main Card */
+.app {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.card {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 40px 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  max-width: 400px;
+  margin: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Heading */
+.heading {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Quote Text Animation */
+.quote {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 30px;
+  position: relative;
+  padding-bottom: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.fade-in {
+  animation: fadeIn 0.6s;
 }
 
-@keyframes App-logo-spin {
+@keyframes fadeIn {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateX(-10px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateX(0);
   }
+}
+
+/* Typewriter Effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Button Styles */
+.button {
+  background-color: #6a1b9a;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  margin: 5px;
+  transition: background-color 0.3s ease;
+  letter-spacing: 1px;
+}
+
+.button:hover {
+  background-color: #7b1fa2;
 }
